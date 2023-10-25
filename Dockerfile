@@ -11,15 +11,17 @@
 #RUN bundle install
 #
 #COPY . /rails_app
-#EXPOSE 80
-#CMD ["rails", "server", "-b", "0.0.0.0"]
+#EXPOSE 3000
+#CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]
 
-FROM ubuntu
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get install apache2 -y
-RUN apt-get install apache2-utils -y
-RUN apt-get clean
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+RUN pip install flask
+
+COPY app.py /opt/
+
 EXPOSE 80
-RUN echo "Hello From Server" > /var/www/html/index.html
-CMD ["apache2ctl","-D","FOREGROUND"]
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=80
+

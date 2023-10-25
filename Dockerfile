@@ -22,6 +22,6 @@ RUN pip install flask
 
 COPY app.py /opt/
 
-EXPOSE 80
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=80
+EXPOSE 3000
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=3000
 

@@ -11,5 +11,5 @@ COPY Gemfile.lock /rails_app/Gemfile.lock
 RUN bundle install
 
 COPY . /rails_app
-
+EXPOSE 80
 CMD ["rails", "server", "-b", "0.0.0.0"]

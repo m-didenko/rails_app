@@ -16,6 +16,12 @@
       ],
       "essential": true,
       "environment": [],
+      "secrets": [
+        {
+          "name": "POSTGRES_PASSWORD",
+          "valueFrom": "POSTGRES_PASSWORD"
+        }
+      ],
       "environmentFiles": [],
       "mountPoints": [],
       "volumesFrom": [],

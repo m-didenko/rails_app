@@ -14,7 +14,7 @@ services:
     environment:
       POSTGRES_USER: rails_app
       POSTGRES_PASSWORD: rails_app
-      POSTGRES_DB: rails_app_development
+      DB_HOST: db
     volumes:
       - .:/rails_app
     ports:

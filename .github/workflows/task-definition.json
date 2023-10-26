@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "rails-app",
-      "image": "522740301681.dkr.ecr.us-east-1.amazonaws.com/rails_app:static_tag",
+      "image": "522740301681.dkr.ecr.us-east-1.amazonaws.com/rails_app:latest",
       "cpu": 0,
       "portMappings": [
         {

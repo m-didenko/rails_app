@@ -11,8 +11,8 @@ COPY Gemfile.lock /my_app/Gemfile.lock
 RUN bundle install
 
 COPY . /my_app
-EXPOSE 3000
-CMD ["rails", "server", "-b", "0.0.0.0", "-p", "3000"]
+EXPOSE 80
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
 
 #FROM ubuntu:20.04
 #

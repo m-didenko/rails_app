@@ -13,8 +13,8 @@ RUN bundle install
 COPY . /my_app
 EXPOSE 80
 
-RUN rails db:create
-RUN rails db:migrate
+CMD ["rails", "db:create"]
+CMD ["rails", "db:migrate"]
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
 
 

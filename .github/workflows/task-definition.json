@@ -15,15 +15,16 @@
         }
       ],
       "essential": true,
-      "environment": [],
+      "environment": [
+        {
+          "name": "RAILS_ENV",
+          "value": "production"
+        }
+      ],
       "secrets": [
         {
           "name": "POSTGRES_PASSWORD",
           "valueFrom": "arn:aws:ssm:us-east-1:522740301681:parameter/POSTGRES_PASSWORD"
-        },
-        {
-          "name": "RAILS_ENV",
-          "value": "production"
         }
       ],
       "environmentFiles": [],

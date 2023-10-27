@@ -12,17 +12,10 @@ RUN bundle install
 
 COPY . /my_app
 EXPOSE 80
+
+RUN rails db:create
+RUN rails db:migrate
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]
 
-#FROM ubuntu:20.04
-#
-#RUN apt-get update && apt-get install -y python3 python3-pip
-#
-#RUN pip install flask
-#
-#COPY app.py /opt/
-#
-#EXPOSE 3000
-#ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=3000
 
 

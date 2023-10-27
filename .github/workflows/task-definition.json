@@ -1,5 +1,5 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:522740301681:task-definition/rails-app:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:522740301681:task-definition/rails-app:33",
   "containerDefinitions": [
     {
       "name": "rails-app",
@@ -16,16 +16,18 @@
       ],
       "essential": true,
       "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
       "secrets": [
         {
           "name": "POSTGRES_PASSWORD",
           "valueFrom": "arn:aws:ssm:us-east-1:522740301681:parameter/POSTGRES_PASSWORD"
+        },
+        {
+          "name": "SECRET_KEY_BASE_PRODUCTION",
+          "valueFrom": "arn:aws:ssm:us-east-1:522740301681:parameter/SECRET_KEY_BASE_PRODUCTION"
         }
       ],
-      "environmentFiles": [],
-      "mountPoints": [],
-      "volumesFrom": [],
-      "ulimits": [],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -41,7 +43,7 @@
   "family": "rails-app",
   "executionRoleArn": "arn:aws:iam::522740301681:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
+  "revision": 33,
   "volumes": [],
   "status": "ACTIVE",
   "requiresAttributes": [
@@ -59,6 +61,9 @@
     },
     {
       "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "ecs.capability.secrets.ssm.environment-variables"
     },
     {
       "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
@@ -84,7 +89,7 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2023-10-25T18:53:52.671Z",
+  "registeredAt": "2023-10-27T19:25:02.006Z",
   "registeredBy": "arn:aws:iam::522740301681:root",
   "tags": []
 }

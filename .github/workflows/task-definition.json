@@ -19,7 +19,7 @@
       "secrets": [
         {
           "name": "POSTGRES_PASSWORD",
-          "valueFrom": "POSTGRES_PASSWORD"
+          "valueFrom": "arn:aws:ssm:us-east-1:522740301681:parameter/POSTGRES_PASSWORD"
         }
       ],
       "environmentFiles": [],

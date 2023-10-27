@@ -12,7 +12,7 @@ RUN bundle install
 
 COPY . /my_app
 EXPOSE 80
-
+ENV RAILS_ENV=$RAILS_ENV
 CMD ["rails", "db:create"]
 CMD ["rails", "db:migrate"]
 CMD ["rails", "server", "-b", "0.0.0.0", "-p", "80"]

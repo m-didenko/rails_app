@@ -70,6 +70,7 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.require_master_key = false
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"
